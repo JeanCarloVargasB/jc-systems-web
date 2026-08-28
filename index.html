@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JC Systems — Reparación, mantenimiento y venta de equipos</title>
+<meta name="description" content="Reparación y mantenimiento de computadoras de escritorio, laptops y consolas PS4/PS5. Licencias de software 100% originales y venta de equipos nuevos y de segunda. WhatsApp 6185-0450.">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #0a0e16;
+    color: #eef1f7;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Sora", system-ui, sans-serif;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  a { color: #5b9bff; text-decoration: none; }
+  a:hover { color: #8fbaff; }
+  img { display: block; max-width: 100%; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 96px 0; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #5b9bff;
+    margin-bottom: 14px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    font-family: inherit;
+  }
+  .btn-whatsapp { background: #22c55e; color: #06210f; }
+  .btn-whatsapp:hover { background: #34d874; color: #06210f; }
+  .btn-outline { background: transparent; color: #eef1f7; border-color: #2a3448; }
+  .btn-outline:hover { background: #131a29; color: #eef1f7; }
+  .card {
+    background: linear-gradient(180deg, #121926 0%, #0f1520 100%);
+    border: 1px solid #1e2636;
+    border-radius: 18px;
+  }
+  .badge-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(91,155,255,0.12);
+    border: 1px solid rgba(91,155,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .grid-services {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+  }
+  .grid-trust {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links button { flex-shrink: 0; }
+  .link-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+    text-align: inherit;
+  }
+  .split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .gallery-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 16px 18px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .social-btn {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    background: #131a29;
+    border: 1px solid #232d42;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .social-btn:hover { background: #1a2334; border-color: #2f3c58; }
+  .footer-cols {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 40px;
+  }
+  @media (max-width: 900px) {
+    .split-grid { grid-template-columns: 1fr; }
+    .grid-services { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-gallery { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-trust { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .footer-cols { grid-template-columns: 1fr; }
+    .nav-links { gap: 22px; max-width: 40vw; }
+    .section { padding: 64px 0; }
+    .container { padding: 0 20px; }
+    h1 { font-size: 34px !important; }
+  }
+  @media (max-width: 560px) {
+    .nav-links { max-width: 34vw; }
+    .nav-whatsapp-label { display: none; }
+  }
+
+  html { scroll-behavior: smooth; }
+  #servicios, #licencias, #trabajos, #equipos, #contacto { scroll-margin-top: 96px; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html.js-anim .reveal,
+    html.js-anim .reveal-left,
+    html.js-anim .reveal-right {
+      opacity: 0;
+      transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+    }
+    html.js-anim .reveal { transform: translateY(32px); }
+    html.js-anim .reveal-left { transform: translateX(-36px); }
+    html.js-anim .reveal-right { transform: translateX(36px); }
+    html.js-anim .reveal.is-visible,
+    html.js-anim .reveal-left.is-visible,
+    html.js-anim .reveal-right.is-visible { opacity: 1; transform: none; }
+
+    html.js-anim .reveal-group > * {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+    }
+    html.js-anim .reveal-group.is-visible > * { opacity: 1; transform: none; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(1) { transition-delay: 0ms; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(2) { transition-delay: 70ms; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(3) { transition-delay: 140ms; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(4) { transition-delay: 210ms; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(5) { transition-delay: 280ms; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(6) { transition-delay: 350ms; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(7) { transition-delay: 420ms; }
+    html.js-anim .reveal-group.is-visible > *:nth-child(8) { transition-delay: 490ms; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div style="position: sticky; top: 0; z-index: 50; background: rgba(10,14,22,0.85); backdrop-filter: blur(10px); border-bottom: 1px solid #1a2233;">
+  <div class="container" style="display: flex; align-items: center; justify-content: space-between; height: 84px;">
+    <img src="images/logo.png" alt="JC Systems" style="height: 50px; width: auto;">
+    <div class="nav-links">
+      <button type="button" class="link-btn" data-scroll-to="servicios" style="color:#c3cbdb; font-weight:500; font-size:14px;">Servicios</button>
+      <button type="button" class="link-btn" data-scroll-to="licencias" style="color:#c3cbdb; font-weight:500; font-size:14px;">Licencias</button>
+      <button type="button" class="link-btn" data-scroll-to="trabajos" style="color:#c3cbdb; font-weight:500; font-size:14px;">Trabajos</button>
+      <button type="button" class="link-btn" data-scroll-to="equipos" style="color:#c3cbdb; font-weight:500; font-size:14px;">Equipos</button>
+      <button type="button" class="link-btn" data-scroll-to="contacto" style="color:#c3cbdb; font-weight:500; font-size:14px;">Contacto</button>
+    </div>
+    <a href="https://wa.me/50661850450" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 11px 20px; font-size: 14px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M17.6 14.2c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.68.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35z" fill="#06210f"/><path d="M12.02 2C6.5 2 2.03 6.44 2.03 11.93c0 1.87.51 3.62 1.4 5.13L2 22l5.1-1.34a10.02 10.02 0 0 0 4.92 1.28h.01c5.52 0 10-4.44 10-9.93C22 6.44 17.54 2 12.02 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.03.8.81-2.94-.2-.3a8.2 8.2 0 0 1-1.27-4.4c0-4.53 3.7-8.22 8.2-8.22 2.2 0 4.26.86 5.81 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.53-3.71 8.2-8.22 8.2z" fill="#06210f"/></svg>
+      <span class="nav-whatsapp-label">WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="section" style="padding-top: 64px; padding-bottom: 72px;">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width: 720px; margin: 0 auto;">
+      <div class="eyebrow">Servicio técnico · Computadoras · Consolas</div>
+      <h1 style="font-size: 48px; font-weight: 800; line-height: 1.1; color: #fff;">Reparamos, mantenemos y equipamos tu tecnología</h1>
+      <p style="font-size: 17px; line-height: 1.6; color: #a9b3c7; margin-top: 20px;">Mantenimiento y reparación de computadoras de escritorio, laptops y consolas PS4/PS5. Instalación de software con licencias 100% originales y venta de equipos nuevos y de segunda.</p>
+      <div style="display: flex; gap: 14px; margin-top: 30px; flex-wrap: wrap; justify-content:center;">
+        <a href="https://wa.me/50661850450" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17.6 14.2c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.68.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35z" fill="#06210f"/><path d="M12.02 2C6.5 2 2.03 6.44 2.03 11.93c0 1.87.51 3.62 1.4 5.13L2 22l5.1-1.34a10.02 10.02 0 0 0 4.92 1.28h.01c5.52 0 10-4.44 10-9.93C22 6.44 17.54 2 12.02 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.03.8.81-2.94-.2-.3a8.2 8.2 0 0 1-1.27-4.4c0-4.53 3.7-8.22 8.2-8.22 2.2 0 4.26.86 5.81 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.53-3.71 8.2-8.22 8.2z" fill="#06210f"/></svg>
+          Escríbenos al 6185-0450
+        </a>
+        <button type="button" class="btn btn-outline" data-scroll-to="servicios">Ver servicios</button>
+      </div>
+    </div>
+    <div class="reveal" style="position: relative; margin-top: 56px;">
+      <div style="position:absolute; inset:-24px; background: radial-gradient(circle at 50% 30%, rgba(91,155,255,0.22), transparent 60%); filter: blur(24px); z-index:0;"></div>
+      <img src="images/hero-portada.jpg" alt="JC Systems — reparación de computadoras, licencias de software y mantenimiento de consolas" style="position:relative; z-index:1; width:100%; border-radius: 20px; border: 1px solid #1e2636;">
+    </div>
+  </div>
+</div>
+
+<!-- TRUST BADGES -->
+<div style="border-top: 1px solid #1a2233; border-bottom: 1px solid #1a2233; background: #0d121c;">
+  <div class="container" style="padding: 40px 32px;">
+    <div class="grid-trust reveal-group">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <span style="font-size:14px; font-weight:600; color:#dbe1ee;">Servicio profesional</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3z"/></svg>
+        <span style="font-size:14px; font-weight:600; color:#dbe1ee;">Garantía de servicio</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M4 15v-3a8 8 0 0116 0v3"/><path d="M4 15a2 2 0 002 2h1v-5H6a2 2 0 00-2 2z"/><path d="M20 15a2 2 0 01-2 2h-1v-5h1a2 2 0 012 2z"/></svg>
+        <span style="font-size:14px; font-weight:600; color:#dbe1ee;">Soporte técnico</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <span style="font-size:14px; font-weight:600; color:#dbe1ee;">Atención personalizada</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="section" id="servicios">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width: 640px; margin: 0 auto 56px;">
+      <div class="eyebrow">Lo que hacemos</div>
+      <h2 style="font-size: 36px; font-weight: 800; color:#fff;">Un solo lugar para tu equipo</h2>
+      <p style="color:#a9b3c7; margin-top: 14px; font-size: 16px;">Desde una limpieza preventiva hasta el armado completo de tu próxima PC.</p>
+    </div>
+    <div class="grid-services reveal-group">
+      <div class="card" style="padding: 30px;">
+        <div class="badge-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 700; color:#fff; margin-top: 20px;">Reparación de computadoras</h3>
+        <p style="color:#8b95aa; font-size: 14px; line-height: 1.6; margin-top: 8px;">Diagnóstico, limpieza interna, cambio de piezas y optimización para equipos de escritorio y laptop.</p>
+      </div>
+      <div class="card" style="padding: 30px;">
+        <div class="badge-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 005.4-5.4l-2.1 2.1-2.1-.6-.6-2.1 2.1-2.1z"/></svg>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 700; color:#fff; margin-top: 20px;">Mantenimiento preventivo</h3>
+        <p style="color:#8b95aa; font-size: 14px; line-height: 1.6; margin-top: 8px;">Limpieza interna, cambio de pasta térmica y revisión periódica para que tu equipo no pierda rendimiento.</p>
+      </div>
+      <div class="card" style="padding: 30px;">
+        <div class="badge-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><rect x="2" y="8" width="20" height="9" rx="4"/><circle cx="8" cy="12.5" r="1.4" fill="#5b9bff" stroke="none"/><circle cx="11" cy="12.5" r="1.4" fill="#5b9bff" stroke="none"/><circle cx="18" cy="11" r="1" fill="#5b9bff" stroke="none"/><circle cx="18" cy="14" r="1" fill="#5b9bff" stroke="none"/></svg>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 700; color:#fff; margin-top: 20px;">Mantenimiento PS4 y PS5</h3>
+        <p style="color:#8b95aa; font-size: 14px; line-height: 1.6; margin-top: 8px;">Limpieza interna profunda y cambio de pasta térmica para que tu consola vuelva a correr silenciosa y fresca.</p>
+      </div>
+      <div class="card" style="padding: 30px;">
+        <div class="badge-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M12 2l7 3v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V5l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 700; color:#fff; margin-top: 20px;">Software con licencia original</h3>
+        <p style="color:#8b95aa; font-size: 14px; line-height: 1.6; margin-top: 8px;">Instalación de Windows, Office Pro Plus / 365, Autodesk y antivirus, todo con activación 100% legítima.</p>
+      </div>
+      <div class="card" style="padding: 30px;">
+        <div class="badge-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5b9bff" stroke-width="2"><path d="M6 2l1.5 4h9L18 2"/><rect x="4" y="6" width="16" height="15" rx="2"/><path d="M9 10a3 3 0 006 0"/></svg>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 700; color:#fff; margin-top: 20px;">Venta de equipos</h3>
+        <p style="color:#8b95aa; font-size: 14px; line-height: 1.6; margin-top: 8px;">Computadoras y laptops nuevos y de segunda mano, revisados y listos para trabajar o jugar.</p>
+      </div>
+      <div class="card" style="padding: 30px; display:flex; flex-direction:column; justify-content:center; background: linear-gradient(160deg, rgba(91,155,255,0.14), rgba(91,155,255,0.02));">
+        <h3 style="font-size: 18px; font-weight: 700; color:#fff;">¿No ves tu caso aquí?</h3>
+        <p style="color:#a9b3c7; font-size: 14px; line-height: 1.6; margin-top: 8px;">Contanos qué le pasa a tu equipo y te decimos cómo podemos ayudarte.</p>
+        <a href="https://wa.me/50661850450" target="_blank" rel="noopener" style="margin-top: 16px; font-weight: 700; font-size: 14px; color: #5b9bff;">Preguntar por WhatsApp →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LICENCIAS -->
+<div class="section" id="licencias" style="background: #0d121c; border-top: 1px solid #1a2233; border-bottom: 1px solid #1a2233;">
+  <div class="container">
+    <div class="split-grid" style="align-items:start;">
+      <div class="reveal-left">
+        <div class="eyebrow">Software legítimo</div>
+        <h2 style="font-size: 32px; font-weight: 800; color:#fff; line-height:1.15;">Licencias 100% originales, activadas frente a ti</h2>
+        <p style="color:#a9b3c7; margin-top: 16px; font-size: 15px; line-height: 1.7;">Instalamos y activamos software con licencias legítimas, nada de copias pirata que dejan tu equipo vulnerable o que dejan de funcionar a los meses. Precios en colones, por clave de activación.</p>
+        <div style="display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 28px;">
+          <div style="background:#131a29; border:1px solid #232d42; border-radius:12px; padding:16px;">
+            <div style="font-size:13px; font-weight:700; color:#dbe1ee;">Windows 11 Pro/Home</div>
+            <div style="font-size:15px; font-weight:800; color:#5b9bff; margin-top:4px;">Desde ₡10.000</div>
+          </div>
+          <div style="background:#131a29; border:1px solid #232d42; border-radius:12px; padding:16px;">
+            <div style="font-size:13px; font-weight:700; color:#dbe1ee;">Office 2021 Pro Plus</div>
+            <div style="font-size:15px; font-weight:800; color:#5b9bff; margin-top:4px;">Desde ₡15.000</div>
+          </div>
+          <div style="background:#131a29; border:1px solid #232d42; border-radius:12px; padding:16px;">
+            <div style="font-size:13px; font-weight:700; color:#dbe1ee;">Microsoft 365 (1 año)</div>
+            <div style="font-size:15px; font-weight:800; color:#5b9bff; margin-top:4px;">Desde ₡15.000</div>
+          </div>
+          <div style="background:#131a29; border:1px solid #232d42; border-radius:12px; padding:16px;">
+            <div style="font-size:13px; font-weight:700; color:#dbe1ee;">Antivirus (1 año)</div>
+            <div style="font-size:15px; font-weight:800; color:#5b9bff; margin-top:4px;">Desde ₡13.000</div>
+          </div>
+          <div style="background:#131a29; border:1px solid #232d42; border-radius:12px; padding:16px;">
+            <div style="font-size:13px; font-weight:700; color:#dbe1ee;">Autodesk (1 año)</div>
+            <div style="font-size:15px; font-weight:800; color:#5b9bff; margin-top:4px;">₡40.000</div>
+          </div>
+          <div style="background:#131a29; border:1px solid #232d42; border-radius:12px; padding:16px;">
+            <div style="font-size:13px; font-weight:700; color:#dbe1ee;">Combo Office + Windows</div>
+            <div style="font-size:15px; font-weight:800; color:#5b9bff; margin-top:4px;">Desde ₡18.000</div>
+          </div>
+        </div>
+        <p style="font-size: 12px; color:#5c667a; margin-top: 14px;">Garantía de 30 días en la mayoría de licencias. También manejamos Adobe, CorelDraw, Project, Visio y más.</p>
+        <a href="https://wa.me/50661850450" target="_blank" rel="noopener" class="btn btn-whatsapp" style="margin-top: 20px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M17.6 14.2c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.68.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35z" fill="#06210f"/><path d="M12.02 2C6.5 2 2.03 6.44 2.03 11.93c0 1.87.51 3.62 1.4 5.13L2 22l5.1-1.34a10.02 10.02 0 0 0 4.92 1.28h.01c5.52 0 10-4.44 10-9.93C22 6.44 17.54 2 12.02 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.03.8.81-2.94-.2-.3a8.2 8.2 0 0 1-1.27-4.4c0-4.53 3.7-8.22 8.2-8.22 2.2 0 4.26.86 5.81 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.53-3.71 8.2-8.22 8.2z" fill="#06210f"/></svg>
+          Pedir catálogo completo
+        </a>
+      </div>
+      <div class="card reveal-right" style="padding: 14px; overflow:hidden;">
+        <img src="images/license-proof.jpg" alt="Pantalla de activación de Microsoft Office LTSC Profesional Plus 2024 verificada" style="border-radius: 10px; width:100%;">
+        <p style="font-size:12px; color:#7d879b; margin-top:10px; text-align:center;">Captura real de una activación realizada por nuestro equipo</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TRABAJOS -->
+<div class="section" id="trabajos">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width: 640px; margin: 0 auto 48px;">
+      <div class="eyebrow">Portafolio</div>
+      <h2 style="font-size: 36px; font-weight: 800; color:#fff;">Trabajos realizados</h2>
+      <p style="color:#a9b3c7; margin-top: 14px; font-size: 16px;">Algunos de los equipos que han pasado por nuestras manos.</p>
+    </div>
+    <div class="grid-gallery reveal-group">
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-pc-armada.jpg" alt="Computadora armada de alta gama" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Computadora armada de alta gama</div>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-gabinete.jpg" alt="Limpieza y personalización de equipo gaming" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Limpieza de equipo gaming</div>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-pasta-antes.jpg" alt="Antes: pasta térmica desgastada en procesador" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Antes · pasta térmica desgastada</div>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-pasta-despues.jpg" alt="Después: pasta térmica nueva aplicada en procesador de laptop" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Después · pasta térmica nueva</div>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-malla-antes.jpg" alt="Antes: malla de ventilador de computadora de escritorio con polvo" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Antes · malla de ventilador con polvo</div>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-malla-despues.jpg" alt="Después: malla de ventilador limpia" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Después · malla limpia</div>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-ps5-antes.jpg" alt="Antes: ventilador de PS5 con suciedad" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Antes · ventilador PS5 con polvo</div>
+      </div>
+      <div style="position:relative; border-radius:16px; overflow:hidden; border:1px solid #1e2636;">
+        <img src="images/g-ps5-despues.jpg" alt="Después: ventilador de PS5 limpio" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Después · ventilador PS5 limpio</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EQUIPOS -->
+<div class="section" id="equipos" style="background:#0d121c; border-top: 1px solid #1a2233; border-bottom: 1px solid #1a2233;">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width: 640px; margin: 0 auto 48px;">
+      <div class="eyebrow">Venta de equipos</div>
+      <h2 style="font-size: 36px; font-weight: 800; color:#fff;">Equipos nuevos y de segunda, listos para usar</h2>
+      <p style="color:#a9b3c7; margin-top: 14px; font-size: 16px;">Computadoras, laptops y equipo de punto de venta. Cada equipo de segunda pasa por revisión y mantenimiento antes de salir de nuestras manos.</p>
+    </div>
+    <div class="grid-services reveal-group">
+      <div style="border-radius:16px; overflow:hidden; border:1px solid #1e2636; position:relative;">
+        <img src="images/e-pc-armada.jpg" alt="Computadora armada, resultado final" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Computadora armada</div>
+      </div>
+      <div style="border-radius:16px; overflow:hidden; border:1px solid #1e2636; position:relative;">
+        <img src="images/e-laptop-nueva.jpg" alt="Laptop nueva en caja lista para entregar" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Laptop nueva</div>
+      </div>
+      <div style="border-radius:16px; overflow:hidden; border:1px solid #1e2636; position:relative;">
+        <img src="images/e-laptop-segunda.jpg" alt="Laptop gaming de segunda mano" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Laptop gaming de segunda</div>
+      </div>
+      <div style="border-radius:16px; overflow:hidden; border:1px solid #1e2636; position:relative;">
+        <img src="images/e-pos.jpg" alt="Equipo de punto de venta" style="width:100%; height:200px; object-fit:cover;">
+        <div class="gallery-caption">Equipo de punto de venta</div>
+      </div>
+      <div class="card" style="padding: 30px; display:flex; flex-direction:column; justify-content:center; background: linear-gradient(160deg, rgba(91,155,255,0.14), rgba(91,155,255,0.02)); grid-column: span 2;">
+        <h3 style="font-size: 18px; font-weight: 700; color:#fff;">¿Buscás un equipo específico?</h3>
+        <p style="color:#a9b3c7; font-size: 14px; line-height: 1.6; margin-top: 8px;">Contanos qué necesitás y te confirmamos disponibilidad y precio por WhatsApp.</p>
+        <a href="https://wa.me/50661850450" target="_blank" rel="noopener" style="margin-top: 16px; font-weight: 700; font-size: 14px; color: #5b9bff;">Consultar disponibilidad →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA CONTACTO -->
+<div class="section" id="contacto">
+  <div class="container">
+    <div class="card reveal" style="padding: 64px 48px; text-align:center; background: linear-gradient(160deg, rgba(91,155,255,0.14), #0f1520 60%);">
+      <h2 style="font-size: 32px; font-weight: 800; color:#fff;">¿Listo para darle mantenimiento a tu equipo?</h2>
+      <p style="color:#a9b3c7; margin-top: 14px; font-size: 16px; max-width: 480px; margin-left:auto; margin-right:auto;">Escríbenos por WhatsApp y te ayudamos a diagnosticar el problema o a elegir tu próximo equipo.</p>
+      <div style="display:flex; justify-content:center; gap: 14px; margin-top: 30px; flex-wrap:wrap;">
+        <a href="https://wa.me/50661850450" target="_blank" rel="noopener" class="btn btn-whatsapp" style="padding: 17px 30px; font-size: 16px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M17.6 14.2c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.68.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35z" fill="#06210f"/><path d="M12.02 2C6.5 2 2.03 6.44 2.03 11.93c0 1.87.51 3.62 1.4 5.13L2 22l5.1-1.34a10.02 10.02 0 0 0 4.92 1.28h.01c5.52 0 10-4.44 10-9.93C22 6.44 17.54 2 12.02 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.03.8.81-2.94-.2-.3a8.2 8.2 0 0 1-1.27-4.4c0-4.53 3.7-8.22 8.2-8.22 2.2 0 4.26.86 5.81 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.53-3.71 8.2-8.22 8.2z" fill="#06210f"/></svg>
+          6185-0450
+        </a>
+      </div>
+      <div style="display:flex; justify-content:center; gap: 14px; margin-top: 26px;">
+        <a href="https://www.instagram.com/systems.jc/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dbe1ee" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#dbe1ee" stroke="none"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61589594553432" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dbe1ee" stroke-width="1.8"><path d="M15 8h2V4h-2a5 5 0 00-5 5v2H8v4h2v7h4v-7h2.5l.5-4H14V9a1 1 0 011-1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="border-top: 1px solid #1a2233; padding: 48px 0 28px;">
+  <div class="container">
+    <div class="footer-cols">
+      <div>
+        <img src="images/logo.png" alt="JC Systems" style="height: 42px; width: auto; margin-bottom: 14px;">
+        <p style="color:#7d879b; font-size: 13px; line-height: 1.7; max-width: 280px;">Mantenimiento, reparación y venta de equipos de informática y consolas.</p>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#dbe1ee; margin-bottom: 14px;">Enlaces</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <button type="button" class="link-btn" data-scroll-to="servicios" style="color:#7d879b; font-size:13px;">Servicios</button>
+          <button type="button" class="link-btn" data-scroll-to="trabajos" style="color:#7d879b; font-size:13px;">Trabajos</button>
+          <button type="button" class="link-btn" data-scroll-to="equipos" style="color:#7d879b; font-size:13px;">Equipos</button>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#dbe1ee; margin-bottom: 14px;">Contacto</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <a href="https://wa.me/50661850450" target="_blank" rel="noopener" style="color:#7d879b; font-size:13px;">WhatsApp: 6185-0450</a>
+          <a href="https://www.instagram.com/systems.jc/" target="_blank" rel="noopener" style="color:#7d879b; font-size:13px;">Instagram: @systems.jc</a>
+          <a href="https://www.facebook.com/profile.php?id=61589594553432" target="_blank" rel="noopener" style="color:#7d879b; font-size:13px;">Facebook</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top: 1px solid #1a2233; margin-top: 36px; padding-top: 22px; font-size: 12px; color:#5c667a;">
+      © 2026 JC Systems. Todos los derechos reservados.
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/50661850450" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position:fixed; bottom:24px; right:24px; z-index:60; width:58px; height:58px; border-radius:50%; background:#22c55e; display:flex; align-items:center; justify-content:center; box-shadow: 0 8px 24px rgba(34,197,94,0.4);">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M17.6 14.2c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.91-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.68.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35z" fill="#06210f"/><path d="M12.02 2C6.5 2 2.03 6.44 2.03 11.93c0 1.87.51 3.62 1.4 5.13L2 22l5.1-1.34a10.02 10.02 0 0 0 4.92 1.28h.01c5.52 0 10-4.44 10-9.93C22 6.44 17.54 2 12.02 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.03.8.81-2.94-.2-.3a8.2 8.2 0 0 1-1.27-4.4c0-4.53 3.7-8.22 8.2-8.22 2.2 0 4.26.86 5.81 2.4a8.13 8.13 0 0 1 2.4 5.79c0 4.53-3.71 8.2-8.22 8.2z" fill="#06210f"/></svg>
+</a>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js-anim');
+
+  var scrollBtns = document.querySelectorAll('[data-scroll-to]');
+  for (var s = 0; s < scrollBtns.length; s++) {
+    scrollBtns[s].addEventListener('click', function (e) {
+      e.preventDefault();
+      var target = document.getElementById(this.getAttribute('data-scroll-to'));
+      if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  }
+
+  var els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-group');
+  if (!els.length) { return; }
+  if (typeof IntersectionObserver === 'undefined') {
+    for (var i = 0; i < els.length; i++) { els[i].classList.add('is-visible'); }
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -80% 0px' });
+  for (var j = 0; j < els.length; j++) { io.observe(els[j]); }
+})();
+</script>
+</body>
+</html>
