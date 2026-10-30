@@ -17,7 +17,8 @@ export function Licencias() {
             </h2>
             <p className="mt-4 text-[15px] leading-[1.7] text-muted">
               Instalamos y activamos software con licencias legítimas, nada de copias pirata que dejan tu equipo
-              vulnerable o que dejan de funcionar a los meses. Escríbenos y te confirmamos disponibilidad y precio.
+              vulnerable o que dejan de funcionar a los meses. Precios en colones para 1 equipo; el precio final
+              depende de la versión y la cantidad de equipos.
             </p>
             <WhatsAppButton
               className="mt-6"
@@ -36,13 +37,17 @@ export function Licencias() {
         </div>
 
         <RevealGroup className="mt-14 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
-          {CATEGORIAS.map(({ icon: Icon, nombre, productos, garantia, mensaje }) => (
+          {CATEGORIAS.map(({ icon: Icon, nombre, productos, desde, garantia, mensaje }) => (
             <RevealItem key={nombre} className="card flex flex-col p-6">
               <div className="flex items-center gap-3.5">
                 <IconBadge>
                   <Icon className="h-6 w-6" strokeWidth={2} />
                 </IconBadge>
                 <h3 className="font-display text-lg font-bold text-white">{nombre}</h3>
+              </div>
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-dim">Precios desde</span>
+                <span className="font-display text-2xl font-extrabold text-brand tabular-nums">{desde}</span>
               </div>
               <ul className="mt-4 flex flex-wrap gap-2">
                 {productos.map((p) => (
@@ -64,6 +69,10 @@ export function Licencias() {
           ))}
           <RevealItem className="card flex flex-col justify-center bg-[linear-gradient(160deg,rgba(91,155,255,0.14),rgba(91,155,255,0.02))] p-6">
             <h3 className="font-display text-lg font-bold text-white">¿Necesitas otro programa?</h3>
+            <div className="mt-3 flex items-baseline gap-2">
+              <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-dim">Precios desde</span>
+              <span className="font-display text-2xl font-extrabold text-brand tabular-nums">₡10.000</span>
+            </div>
             <p className="mt-2 text-sm leading-relaxed text-muted">
               También manejamos Filmora, Parallels, CCleaner y más. Pregúntanos por el que necesites.
             </p>

@@ -5,6 +5,7 @@ import { Footer } from './components/Footer'
 import { Hero } from './components/Hero'
 import { Licencias } from './components/Licencias'
 import { Navbar } from './components/Navbar'
+import { Proceso } from './components/Proceso'
 import { Servicios } from './components/Servicios'
 import { Trabajos } from './components/Trabajos'
 import { TrustBar } from './components/TrustBar'
@@ -18,6 +19,7 @@ export default function App() {
         <Hero />
         <TrustBar />
         <Servicios />
+        <Proceso />
         <Licencias />
         <Trabajos />
         <Equipos />

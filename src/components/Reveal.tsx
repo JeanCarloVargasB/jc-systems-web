@@ -27,7 +27,15 @@ function useReveal() {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: MARGIN })
   const atEnd = useAtPageEnd()
-  return [ref, inView || atEnd] as const
+  // A menu jump can land content just under the 60% line; if it sits on screen for a moment, show it anyway.
+  const onScreen = useInView(ref)
+  const [settled, setSettled] = useState(false)
+  useEffect(() => {
+    if (!onScreen || settled) return
+    const t = setTimeout(() => setSettled(true), 700)
+    return () => clearTimeout(t)
+  }, [onScreen, settled])
+  return [ref, inView || atEnd || settled] as const
 }
 
 const OFFSET = { up: { y: 32 }, left: { x: -36 }, right: { x: 36 } }
