@@ -1,3 +1,5 @@
+import { Fondo } from './fondos/Fondo'
+import { FondoPlano } from './fondos/FondoPlano'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { Check, Cpu, Gamepad2, Monitor, type LucideIcon } from 'lucide-react'
 import { useEffect, useRef, useState, type ComponentType } from 'react'
@@ -95,8 +97,11 @@ export function Proceso() {
   const { Escena } = p
 
   return (
-    <section id="proceso" className="py-16 md:py-24">
-      <Container>
+    <section id="proceso" className="relative overflow-hidden py-16 md:py-24">
+      <Fondo>
+        <FondoPlano />
+      </Fondo>
+      <Container className="relative">
         <SectionHeader
           eyebrow="Así trabajamos"
           title="Así se ve un mantenimiento por dentro"

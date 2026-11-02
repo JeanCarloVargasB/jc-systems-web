@@ -1,3 +1,5 @@
+import { Fondo } from './fondos/Fondo'
+import { FondoVentilador } from './fondos/FondoVentilador'
 import { EQUIPOS } from '../data/equipos'
 import { waLink } from '../data/site'
 import { RevealGroup, RevealItem } from './Reveal'
@@ -5,8 +7,11 @@ import { Container, SectionHeader } from './ui'
 
 export function Equipos() {
   return (
-    <section id="equipos" className="border-y border-line-2 bg-ink-2 py-16 md:py-24">
-      <Container>
+    <section id="equipos" className="relative overflow-hidden border-y border-line-2 bg-ink-2 py-16 md:py-24">
+      <Fondo>
+        <FondoVentilador />
+      </Fondo>
+      <Container className="relative">
         <SectionHeader
           eyebrow="Venta de equipos"
           title="Equipos nuevos y de segunda, listos para usar"

@@ -1,3 +1,5 @@
+import { Fondo } from './fondos/Fondo'
+import { FondoAurora } from './fondos/FondoAurora'
 import { ArrowRight } from 'lucide-react'
 import proof from '../assets/img/license-proof.jpg'
 import { CATEGORIAS } from '../data/licencias'
@@ -7,8 +9,11 @@ import { Container, Eyebrow, IconBadge, WhatsAppButton } from './ui'
 
 export function Licencias() {
   return (
-    <section id="licencias" className="border-y border-line-2 bg-ink-2 py-16 md:py-24">
-      <Container>
+    <section id="licencias" className="relative overflow-hidden border-y border-line-2 bg-ink-2 py-16 md:py-24">
+      <Fondo>
+        <FondoAurora />
+      </Fondo>
+      <Container className="relative">
         <div className="grid items-center gap-14 md:grid-cols-2">
           <Reveal from="left">
             <Eyebrow>Software legítimo</Eyebrow>

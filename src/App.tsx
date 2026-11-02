@@ -9,9 +9,11 @@ import { Proceso } from './components/Proceso'
 import { Servicios } from './components/Servicios'
 import { Trabajos } from './components/Trabajos'
 import { TrustBar } from './components/TrustBar'
+import { useBrilloTarjetas } from './components/useBrilloTarjetas'
 import { WhatsAppFloat } from './components/WhatsAppFloat'
 
 export default function App() {
+  useBrilloTarjetas()
   return (
     <MotionConfig reducedMotion="user">
       <Navbar />

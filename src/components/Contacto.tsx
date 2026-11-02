@@ -1,3 +1,5 @@
+import { Fondo } from './fondos/Fondo'
+import { FondoCohetes } from './fondos/FondoCohetes'
 import { FACEBOOK_URL, INSTAGRAM_URL, WHATSAPP_DISPLAY } from '../data/site'
 import { FacebookIcon, InstagramIcon } from './icons'
 import { Reveal } from './Reveal'
@@ -8,8 +10,11 @@ const social =
 
 export function Contacto() {
   return (
-    <section id="contacto" className="py-16 md:py-24">
-      <Container>
+    <section id="contacto" className="relative overflow-hidden py-16 md:py-24">
+      <Fondo>
+        <FondoCohetes />
+      </Fondo>
+      <Container className="relative">
         <Reveal className="card bg-[linear-gradient(160deg,rgba(91,155,255,0.14),#0f1520_60%)] px-6 py-16 text-center md:px-12">
           <h2 className="font-display text-[28px] font-extrabold text-white md:text-[32px]">
             ¿Listo para darle mantenimiento a tu equipo?

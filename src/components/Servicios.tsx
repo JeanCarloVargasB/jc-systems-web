@@ -1,3 +1,5 @@
+import { Fondo } from './fondos/Fondo'
+import { FondoCircuito } from './fondos/FondoCircuito'
 import { SERVICIOS } from '../data/servicios'
 import { waLink } from '../data/site'
 import { RevealGroup, RevealItem } from './Reveal'
@@ -5,8 +7,11 @@ import { Container, IconBadge, SectionHeader } from './ui'
 
 export function Servicios() {
   return (
-    <section id="servicios" className="py-16 md:py-24">
-      <Container>
+    <section id="servicios" className="relative overflow-hidden py-16 md:py-24">
+      <Fondo>
+        <FondoCircuito />
+      </Fondo>
+      <Container className="relative">
         <SectionHeader
           eyebrow="Lo que hacemos"
           title="Un solo lugar para tu equipo"

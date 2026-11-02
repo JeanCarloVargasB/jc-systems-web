@@ -1,3 +1,5 @@
+import { Fondo } from './fondos/Fondo'
+import { FondoPolvo } from './fondos/FondoPolvo'
 import { TRABAJOS, type Foto } from '../data/trabajos'
 import { RevealGroup, RevealItem } from './Reveal'
 import { Container, SectionHeader } from './ui'
@@ -20,8 +22,11 @@ function Imagen({ foto }: { foto: Foto }) {
 
 export function Trabajos() {
   return (
-    <section id="trabajos" className="py-16 md:py-24">
-      <Container>
+    <section id="trabajos" className="relative overflow-hidden py-16 md:py-24">
+      <Fondo>
+        <FondoPolvo />
+      </Fondo>
+      <Container className="relative">
         <SectionHeader
           eyebrow="Portafolio"
           title="Trabajos realizados"
