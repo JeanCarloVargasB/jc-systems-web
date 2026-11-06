@@ -1,4 +1,6 @@
 import { MotionConfig } from 'framer-motion'
+import { useEffect } from 'react'
+import { iniciarScrollSuave } from './components/scroll'
 import { Contacto } from './components/Contacto'
 import { Equipos } from './components/Equipos'
 import { Footer } from './components/Footer'
@@ -14,6 +16,7 @@ import { WhatsAppFloat } from './components/WhatsAppFloat'
 
 export default function App() {
   useBrilloTarjetas()
+  useEffect(() => iniciarScrollSuave(), [])
   return (
     <MotionConfig reducedMotion="user">
       <Navbar />

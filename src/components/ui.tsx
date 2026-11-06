@@ -3,9 +3,7 @@ import { WHATSAPP_DISPLAY, waLink } from '../data/site'
 import { WhatsAppIcon } from './icons'
 import { Reveal } from './Reveal'
 
-export function scrollToId(id: string) {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-}
+export { scrollToId } from './scroll'
 
 export function Container({ children, className = '' }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto max-w-[1180px] px-5 md:px-8 ${className}`}>{children}</div>
